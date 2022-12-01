@@ -9,7 +9,11 @@ import { Order, OrderService } from 'src/app/model';
 export class OrderImplService implements OrderService {
   constructor(private databaseService: NgxIndexedDBService) {}
 
-  retriveOrders(): Observable<Order[]> {
+  retrieveOrders(): Observable<Order[]> {
     return this.databaseService.getAll<Order>('orders');
+  }
+
+  calculateShipping(km: number): number {
+    return km;
   }
 }

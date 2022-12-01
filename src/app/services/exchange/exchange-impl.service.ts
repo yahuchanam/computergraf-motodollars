@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { APP_SETTINGS } from 'src/app/app.configuration';
-import { ExchangeService } from 'src/app/model/exchange-service.interface';
+import { ExchangeService } from 'src/app/model';
 
 const { DOLLAR_CALCULATE_API } = APP_SETTINGS;
 

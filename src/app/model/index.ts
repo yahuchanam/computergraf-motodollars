@@ -6,3 +6,4 @@ export { PostalCodePayload } from './postal-code-payload.interface';
 export { CustomerService } from './customer-service.interface';
 export { AddressService } from './address-service.interface';
 export { OrderService } from './order-service.interface';
+export { ExchangeService } from './exchange-service.interface';

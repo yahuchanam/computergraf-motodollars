@@ -12,7 +12,7 @@ const { CEP_API, KM_DISTANCE_API, START_LOCATION, BING_KEY } = APP_SETTINGS;
 export class AddressImplService implements AddressService {
   constructor(private http: HttpClient) {}
 
-  retriveByPostalCode(postalCode: string): Observable<Address> {
+  retrieveByPostalCode(postalCode: string): Observable<Address> {
     return this.http.get<PostalCodePayload>(`${CEP_API}/${postalCode}`).pipe(
       map((payload) => ({
         address: payload.logradouro,
@@ -24,7 +24,7 @@ export class AddressImplService implements AddressService {
     );
   }
 
-  retriveDistanceForDelivery(address: Address): Observable<number> {
+  retrieveDistanceForDelivery(address: Address): Observable<number> {
     const addressFormated = this.addressToString(address);
     const htttParamsBuilder: HttpParams = new HttpParams();
     const params = htttParamsBuilder
