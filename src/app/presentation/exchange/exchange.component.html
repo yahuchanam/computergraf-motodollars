@@ -1,1 +1,10 @@
-<p>exchange works!</p>
+<a mat-button [routerLink]="['/admin']"> Sou Administrador </a>
+<main class="exchange">
+  <app-logo
+    class="exchange__col"
+    [showInstitucionalText]="step === 1"
+  ></app-logo>
+  <app-cta></app-cta>
+  <app-exchange-form></app-exchange-form>
+</main>
+<app-footer></app-footer>

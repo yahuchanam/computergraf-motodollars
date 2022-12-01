@@ -1,0 +1,9 @@
+<section *ngIf="showMetrics">
+  <app-metric
+    *ngFor="let metric; as: metrics"
+    [value]="metric.value"
+    [description]="metric.description"
+  ></app-metric>
+</section>
+
+<app-text-legal></app-text-legal>
