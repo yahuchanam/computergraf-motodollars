@@ -1,5 +1,5 @@
 export interface Order {
-  id: number;
+  id: any;
   usd: number;
-  createAt: Date;
+  createAt: string;
 }
