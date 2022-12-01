@@ -1,0 +1,50 @@
+@mixin tablet {
+    @media (min-width: #{$breakpoint-tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+
+@mixin x-desktop {
+    @media (min-width: #{$breakpoint-x-large}) {
+        @content;
+    }
+}
+
+@mixin xx-desktop {
+    @media (min-width: #{$breakpoint-xx-large}) {
+        @content;
+    }
+}
+
+@mixin column($wrap: wrap) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: $wrap;
+}
+
+@mixin row($wrap: wrap) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: $wrap;
+}
+
+@mixin fface($family, $file: "", $weight: 400, $style: normal) {
+    @font-face {
+        font-family: $family;
+        src: url("/assets/fonts/#{$file}.woff2") format("woff2"),
+             url("/assets/fonts/#{$file}.woff") format('woff');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+@mixin alinhar($base, $eixo) {
+    justify-content: $base;
+    align-items: $eixo;
+}
