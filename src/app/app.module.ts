@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxIndexedDBModule } from 'ngx-indexed-db';
+import { MotoDollarsDatabaseConfig } from './infra/moto-dollars.database';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxIndexedDBModule.forRoot(MotoDollarsDatabaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
