@@ -1,51 +1,52 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
 /****** Elad Shechter's RESET *******/
 /*** box sizing border-box for all elements ***/
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
-    height: 100vh;
-    color: $color-base;
-    background: $color-light;
-    font-family: $font-family;
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  color: $color-base;
+  background: $color-light;
+  font-family: $font-family;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 button {
-    background-color: transparent;
-    color: inherit;
-    border-width: 0;
-    padding: 0;
-    cursor: pointer;
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-    margin: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
 ul,
 ol,
 dd {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 h1,
@@ -54,22 +55,21 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
-    font-size: inherit;
-    font-weight: inherit;
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 cite {
-    font-style: normal;
+  font-style: normal;
 }
 
 fieldset {
-    border-width: 0;
-    padding: 0;
-    margin: 0;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
 }
-

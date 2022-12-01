@@ -1,7 +1,8 @@
-@include fface("Whyte", "Whyte-Regular", 400, 'normal');
-@include fface("Whyte", "Whyte-Super", 900, 'normal');
+@include fface('Whyte', 'Whyte-Regular', 400, 'normal');
+@include fface('Whyte', 'Whyte-Super', 900, 'normal');
 
-html, body {
+html,
+body {
   font-family: 'Whyte';
   font-weight: 400;
 }
