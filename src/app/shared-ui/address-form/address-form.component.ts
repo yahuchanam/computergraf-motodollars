@@ -71,6 +71,7 @@ export class AddressFormComponent implements OnInit, OnDestroy {
     postalCode: ['', [Validators.required, Validators.minLength(8)]],
     extra: ['', []],
     city: ['', [Validators.required, Validators.minLength(3)]],
+    district: ['', [Validators.required, Validators.minLength(2)]],
     state: [
       '',
       [Validators.required, Validators.minLength(2), Validators.maxLength(2)]

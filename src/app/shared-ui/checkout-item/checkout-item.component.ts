@@ -10,5 +10,5 @@ import { CommonModule } from '@angular/common';
 })
 export class CheckoutItemComponent {
   @Input() title = '';
-  @Input() value: string | null = null;
+  @Input() value: string | number | null | undefined = null;
 }

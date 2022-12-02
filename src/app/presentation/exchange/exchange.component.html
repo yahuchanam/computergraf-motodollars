@@ -17,5 +17,6 @@
     (closeDeal)="closeDeal($event)"
     (back)="gotoStepOne($event)"
   ></app-address-form>
+  <app-order-done *ngIf="step === 3" [order]="order"> </app-order-done>
 </main>
 <app-footer [metrics]="step === 1 ? metrics : []"></app-footer>

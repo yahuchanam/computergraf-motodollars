@@ -1,0 +1,33 @@
+<div class="order">
+  <h1>Pedido Realizado!</h1>
+  <p>
+    Parabéns!<br />
+    Estamos preparando seus dólares para o envio imediato, em breve você irá ter
+    suas verdinhas em mãos.
+  </p>
+  <p>Muito obrigado por escolher a MotoDollars.</p>
+
+  <h2>Comprovante</h2>
+  <section>
+    <app-checkout-item
+      title="Código da transação"
+      [value]="order.id"
+    ></app-checkout-item>
+    <app-checkout-item
+      title="Valor em BRL"
+      [value]="brlValue | currency : 'BRL'"
+    ></app-checkout-item>
+    <app-checkout-item
+      title="Taxa de entrega (R$ 1/km)"
+      [value]="order.kmDistance | currency : 'BRL'"
+    ></app-checkout-item>
+    <app-checkout-item
+      title="Total pago"
+      [value]="order.kmDistance + brlValue | currency : 'BRL'"
+    ></app-checkout-item>
+  </section>
+  <button mat-button type="button" class="cta-btn" (click)="backHandle()">
+    Fazer novo pedido
+  </button>
+</div>
+<img class="moto" src="assets/images/moto.png" />

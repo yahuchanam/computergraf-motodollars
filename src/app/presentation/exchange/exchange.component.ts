@@ -1,16 +1,23 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FooterComponent } from 'src/app/shared-ui/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { LogoComponent } from 'src/app/shared-ui/logo/logo.component';
 import { CtaComponent } from 'src/app/shared-ui/cta/cta.component';
 import { ExchangeFormComponent } from 'src/app/shared-ui/exchange-form/exchange-form.component';
-import { ExchangeForm, ExchangeService, OrderPayload } from 'src/app/model';
+import {
+  CustomerService,
+  ExchangeForm,
+  ExchangeService,
+  OrderPayload
+} from 'src/app/model';
 import { ExchangeImplService } from 'src/app/services/exchange/exchange-impl.service';
 import { SubSink } from 'subsink';
 import { Metric } from 'src/app/model/metric.interface';
 import { AddressFormComponent } from 'src/app/shared-ui/address-form/address-form.component';
+import { CustomerImplService } from 'src/app/services/customer/customer-impl.service';
+import { OrderDoneComponent } from 'src/app/shared-ui/order-done/order-done.component';
 
 @Component({
   selector: 'app-exchange',
@@ -23,12 +30,17 @@ import { AddressFormComponent } from 'src/app/shared-ui/address-form/address-for
     LogoComponent,
     CtaComponent,
     ExchangeFormComponent,
-    AddressFormComponent
+    AddressFormComponent,
+    OrderDoneComponent
   ],
   providers: [
     {
       provide: ExchangeService,
       useExisting: ExchangeImplService
+    },
+    {
+      provide: CustomerService,
+      useExisting: CustomerImplService
     }
   ],
   templateUrl: './exchange.component.html',
@@ -50,6 +62,21 @@ export class ExchangeComponent implements OnInit, OnDestroy {
     brl: 1000
   };
 
+  public order: OrderPayload = {
+    id: 120,
+    createAt: '02/12/1982',
+    address: '',
+    addressNumber: '',
+    city: '',
+    district: '',
+    kmDistance: 100,
+    name: 'Seu nome',
+    postalCode: '',
+    state: '',
+    usd: 120,
+    extra: ''
+  };
+
   public metrics: Metric[] = [
     {
       value: '-60',
@@ -65,7 +92,10 @@ export class ExchangeComponent implements OnInit, OnDestroy {
     }
   ];
 
-  constructor(private exchangeService: ExchangeService) {}
+  constructor(
+    private exchangeService: ExchangeService,
+    private customerService: CustomerService
+  ) {}
 
   ngOnInit(): void {
     const yesterday = this.getYesterday();
@@ -77,6 +107,8 @@ export class ExchangeComponent implements OnInit, OnDestroy {
           selected: this.exchangeSelected
         };
       });
+
+    this.step = 3;
   }
 
   ngOnDestroy(): void {
@@ -100,6 +132,15 @@ export class ExchangeComponent implements OnInit, OnDestroy {
   }
 
   closeDeal(data: OrderPayload): void {
-    console.log(data);
+    const datePipe = new DatePipe('pt-BR');
+    data.createAt = datePipe.transform(new Date(), 'dd/MM/yyyy') as string;
+    this.customerService.addOrder(data).subscribe((result) => {
+      this.gotoTicket(result);
+    });
+  }
+
+  gotoTicket(order: OrderPayload): void {
+    this.order = order;
+    this.step = 3;
   }
 }

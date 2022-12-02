@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { OrderPayload, Order } from './';
+import { OrderPayload } from './';
 
-export interface CustomerService {
-  addOrder: (order: OrderPayload) => Observable<Order>;
+export abstract class CustomerService {
+  abstract addOrder: (order: OrderPayload) => Observable<OrderPayload>;
 }
