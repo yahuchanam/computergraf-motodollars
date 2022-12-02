@@ -21,6 +21,7 @@
     *ngIf="step === 3"
     [order]="order"
     [brlValue]="exchangeSelected.brl"
+    (back)="gotoStepOne(exchangeSelected)"
   >
   </app-order-done>
 </main>
