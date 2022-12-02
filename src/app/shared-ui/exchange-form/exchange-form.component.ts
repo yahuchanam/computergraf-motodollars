@@ -39,9 +39,10 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 })
 export class ExchangeFormComponent implements OnInit {
   @Input() public loading = true;
-  @Input() set exchangeRate(value: number) {
+  @Input() set exchangeRate({ value, selected }: any) {
     this._exchangeRate = value;
-    this.exchangeformGroup.get('brl')?.setValue(1000);
+    this.exchangeformGroup.get('usd')?.setValue(selected.usd);
+    this.exchangeformGroup.get('brl')?.setValue(selected.brl);
   }
 
   @Output() public startOrder = new EventEmitter<ExchangeForm>();

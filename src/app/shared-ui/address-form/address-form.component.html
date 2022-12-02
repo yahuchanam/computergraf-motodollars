@@ -1,0 +1,126 @@
+<form [formGroup]="addressformGroup">
+  <p>Informe os dados abaixo por favor</p>
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Nome completo</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="name"
+      placeholder="Seu nome aqui"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>CEP</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="postalCode"
+      mask="00000-000"
+      placeholder="01000-000"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Endereço</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="address"
+      placeholder="Digite seu endereço aqui"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="outline"
+    floatLabel="always"
+    class="address-number"
+  >
+    <mat-label>Número</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="addressNumber"
+      placeholder="770"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="outline"
+    floatLabel="always"
+    class="address-extra"
+  >
+    <mat-label>Complemento</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="extra"
+      placeholder="Complemento"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Cidade</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="city"
+      placeholder="Sua cidade aqui"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Estado</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="state"
+      placeholder="Seu estado aqui"
+      required
+    />
+  </mat-form-field>
+</form>
+
+<section>
+  <h1>Confira seu pedido</h1>
+
+  <div>
+    <app-checkout-item
+      title="Você está pedindo"
+      [value]="exchangeSelected.usd.toString() | currency : 'USD'"
+    ></app-checkout-item>
+    <button mat-button type="button" class="change-btn" (click)="backHandle()">
+      Mudar valor
+    </button>
+  </div>
+
+  <app-checkout-item
+    title="Valor em BRL"
+    [value]="exchangeSelected.brl.toString() | currency : 'BRL'"
+  ></app-checkout-item>
+
+  <app-checkout-item
+    title="Taxa de entrega"
+    [value]="shippingValue.toString() | currency : 'BRL'"
+  ></app-checkout-item>
+
+  <app-checkout-item
+    title="Total a pagar"
+    [value]="orderTotal.toString() | currency : 'BRL'"
+  ></app-checkout-item>
+
+  <button
+    mat-button
+    type="button"
+    class="cta-btn"
+    (click)="order()"
+    [disabled]="addressformGroup.invalid"
+  >
+    Contratar
+  </button>
+</section>

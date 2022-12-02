@@ -1,0 +1,22 @@
+@import '/src/global-styles/common';
+
+:host {
+  @include column();
+  gap: 1rem;
+}
+
+h1,
+h3 {
+  font-family: 'Whyte';
+  color: $color-primary;
+}
+
+h1 {
+  font-size: 23px;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}

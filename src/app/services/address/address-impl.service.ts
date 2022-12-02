@@ -37,7 +37,7 @@ export class AddressImplService implements AddressService {
 
     return this.http.get<any>(`${KM_DISTANCE_API}`, { params }).pipe(
       map(({ resourceSets }) => {
-        return resourceSets[0].travelDistance;
+        return resourceSets[0].resources[0].travelDistance;
       })
     );
   }

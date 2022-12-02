@@ -4,7 +4,17 @@
     class="exchange__col"
     [showInstitucionalText]="step === 1"
   ></app-logo>
-  <app-cta></app-cta>
-  <app-exchange-form [exchangeRate]="exchangeRate"></app-exchange-form>
+  <app-cta *ngIf="step === 1"></app-cta>
+  <app-exchange-form
+    *ngIf="step === 1"
+    [exchangeRate]="exchangeRate"
+    (startOrder)="startOrder($event)"
+  ></app-exchange-form>
+  <app-address-form
+    *ngIf="step === 2"
+    [exchangeSelected]="exchangeSelected"
+    (closeDeal)="closeDeal($event)"
+    (back)="gotoStepOne($event)"
+  ></app-address-form>
 </main>
-<app-footer [metrics]="metrics"></app-footer>
+<app-footer [metrics]="step === 1 ? metrics : []"></app-footer>

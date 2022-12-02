@@ -1,0 +1,100 @@
+@import '/src/global-styles/common';
+
+:host {
+  @include column();
+}
+
+form {
+  @include row();
+  gap: 1rem;
+  background-color: $color-light;
+  margin: 1.5rem;
+  padding: 1.7rem;
+  border-radius: 20px;
+  box-shadow: -5px 0px 24px rgba($color-dark, 25%);
+  justify-content: space-between;
+
+  p {
+    flex: 1 1 100%;
+    margin-bottom: 0.8rem;
+  }
+
+  mat-form-field {
+    width: 100%;
+
+    &.address-number {
+      width: 85px;
+    }
+
+    &.address-extra {
+      width: calc(100% - 85px - 1.5rem);
+    }
+  }
+}
+
+section {
+  @include column();
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.7rem;
+
+  & > div {
+    @include row();
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-family: 'Whyte';
+    color: $color-primary;
+    font-size: 23px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+p {
+  color: $color-primary;
+  text-align: center;
+  flex-basis: 20px;
+}
+
+.cta-btn {
+  background-color: $color-accent;
+  color: $color-light;
+  text-transform: uppercase;
+  height: 45px;
+  margin-top: 0.5rem;
+
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.change-btn {
+  background-color: $color-grey;
+  color: $color-light;
+  text-transform: uppercase;
+  height: 32px;
+  font-size: 8px;
+}
+
+@include tablet() {
+  :host {
+    flex: 1 0 45%;
+  }
+}
+
+@include desktop() {
+  :host {
+    flex: 1 0 auto;
+    margin-top: calc(100vh - 500px);
+  }
+}
+
+@include x-desktop() {
+  :host {
+    margin-top: calc(50vh - 310px);
+  }
+}
