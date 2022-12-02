@@ -8,13 +8,15 @@
       formControlName="brl"
       placeholder="R$ 5.500,00"
       currencyMask
-      [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', precision: 2 }"
+      [options]="{
+        align: 'left',
+        prefix: 'R$ ',
+        thousands: '.',
+        decimal: ',',
+        precision: 2
+      }"
     />
-    <img
-      matSuffix
-      class="form-input__flag"
-      src="assets/images/flag-brazil.png"
-    />
+    <img matSuffix class="flag" src="assets/images/flag-brazil.png" />
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Valor em dólares (USD)</mat-label>
@@ -23,9 +25,9 @@
       formControlName="usd"
       placeholder="$ 1.000,00"
       currencyMask
-      [options]="{ prefix: '$ ', thousands: ',', precision: 2 }"
+      [options]="{ align: 'left', prefix: '$ ', thousands: ',', precision: 2 }"
     />
-    <img matSuffix class="form-input__flag" src="assets/images/flag-usa.png" />
+    <img matSuffix class="flag" src="assets/images/flag-usa.png" />
   </mat-form-field>
   <button
     mat-button

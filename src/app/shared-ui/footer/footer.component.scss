@@ -1,0 +1,18 @@
+@import '/src/global-styles/common';
+
+:host {
+  @include column();
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 0;
+  padding: 2rem 3rem;
+  gap: 3rem;
+  background-color: $color-dark;
+}
+
+section {
+  @include row();
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}

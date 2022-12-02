@@ -1,0 +1,17 @@
+@import '/src/global-styles/common';
+
+:host {
+  @include column();
+  justify-content: center;
+  margin: 2rem;
+  align-items: center;
+  gap: 3rem;
+}
+
+p {
+  display: none;
+}
+
+img {
+  width: 204px;
+}

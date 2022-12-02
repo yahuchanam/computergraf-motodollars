@@ -1,0 +1,33 @@
+@import '/src/global-styles/common';
+
+:host {
+  @include column();
+}
+
+form {
+  @include column();
+  gap: 1rem;
+  background-color: $color-light;
+  margin: 1.5rem;
+  padding: 1.7rem;
+  border-radius: 20px;
+  box-shadow: -5px 0px 24px rgba($color-dark, 25%);
+
+  p {
+    color: $color-primary;
+    text-align: center;
+    flex-basis: 100%;
+  }
+
+  .flag {
+    margin-right: 10px;
+  }
+
+  .cta-btn {
+    background-color: $color-accent;
+    color: $color-light;
+    text-transform: uppercase;
+    height: 45px;
+    margin-top: -10px;
+  }
+}

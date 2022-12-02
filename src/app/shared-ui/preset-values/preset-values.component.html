@@ -5,5 +5,5 @@
   class="cta-btn"
   (click)="changeValue.emit(value)"
 >
-  $ {{ value }}
+  $ {{ value > 500 ? '1k' : value }}
 </button>

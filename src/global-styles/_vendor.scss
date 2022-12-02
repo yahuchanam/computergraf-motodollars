@@ -4,18 +4,84 @@
 
 @include mat.core();
 
-$my-primary: mat.define-palette(mat.$indigo-palette, 500);
-$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-$my-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $my-primary,
-      accent: $my-accent
-    ),
-    typography: mat.define-typography-config(),
-    density: 0
+$green-base: (
+  50: #9dbfb8,
+  100: #59988a,
+  200: #277564,
+  300: #13463b,
+  400: #13463b,
+  500: #13463b,
+  600: #13463b,
+  700: #13463b,
+  800: #13463b,
+  900: #13463b,
+  A100: #13463b,
+  A200: #13463b,
+  A400: #13463b,
+  A700: #13463b,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87)
   )
 );
 
-@include mat.all-component-themes($my-theme);
+$green-light: (
+  50: #d4e6bb,
+  100: #d4e6bb,
+  200: #d4e6bb,
+  300: #adbf95,
+  400: #adbf95,
+  500: #adbf95,
+  600: #adbf95,
+  700: #adbf95,
+  800: #adbf95,
+  900: #adbf95,
+  A100: #adbf95,
+  A200: #adbf95,
+  A400: #adbf95,
+  A700: #adbf95,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87)
+  )
+);
+
+$motodollar-primary: mat.define-palette($green-base);
+$motodollar-accent: mat.define-palette($green-light);
+$motodollar-warn: mat.define-palette(mat.$red-palette);
+
+$motodollar-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $motodollar-primary,
+      accent: $motodollar-accent,
+      warn: $motodollar-warn
+    )
+  )
+);
+
+@include mat.all-component-themes($motodollar-theme);

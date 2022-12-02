@@ -9,6 +9,7 @@ import { ExchangeFormComponent } from 'src/app/shared-ui/exchange-form/exchange-
 import { ExchangeService } from 'src/app/model';
 import { ExchangeImplService } from 'src/app/services/exchange/exchange-impl.service';
 import { SubSink } from 'subsink';
+import { Metric } from 'src/app/model/metric.interface';
 
 @Component({
   selector: 'app-exchange',
@@ -35,6 +36,20 @@ export class ExchangeComponent implements OnInit, OnDestroy {
   private subs = new SubSink();
   public step = 1;
   public exchangeRate = 0;
+  public metrics: Metric[] = [
+    {
+      value: '-60',
+      description: 'Entraga em minutos'
+    },
+    {
+      value: '+500',
+      description: 'Entregadores'
+    },
+    {
+      value: '1',
+      description: 'Apenas R$ 1 por KM'
+    }
+  ];
 
   constructor(private exchangeService: ExchangeService) {}
 

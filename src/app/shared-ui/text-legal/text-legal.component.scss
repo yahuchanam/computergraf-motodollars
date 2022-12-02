@@ -1,0 +1,11 @@
+@import '/src/global-styles/common';
+
+:host {
+  @include column();
+  gap: 0.8rem;
+}
+
+p {
+  font-size: 11px;
+  text-align: center;
+}

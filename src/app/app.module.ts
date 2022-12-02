@@ -11,6 +11,7 @@ import { MotoDollarsDatabaseConfig } from './infra/moto-dollars.database';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { NgxMaskModule } from 'ngx-mask';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 registerLocaleData(localePt);
 
@@ -22,7 +23,8 @@ registerLocaleData(localePt);
     BrowserAnimationsModule,
     HttpClientModule,
     NgxMaskModule.forRoot(),
-    NgxIndexedDBModule.forRoot(MotoDollarsDatabaseConfig)
+    NgxIndexedDBModule.forRoot(MotoDollarsDatabaseConfig),
+    FontAwesomeModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
