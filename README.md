@@ -47,7 +47,7 @@ ng serve -o
 ```
 
 ou acesse:
-https://pontomais-test.vercel.app/
+https://computergraf-motodollars.vercel.app/exchange
 
 Obrigado!
 
