@@ -1,0 +1,9 @@
+<button
+  *ngFor="let value of presetValues"
+  mat-button
+  type="button"
+  class="cta-btn"
+  (click)="changeValue.emit(value)"
+>
+  $ {{ value }}
+</button>

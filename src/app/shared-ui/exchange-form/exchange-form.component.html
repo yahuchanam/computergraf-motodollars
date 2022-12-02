@@ -1,1 +1,39 @@
-<form [formGroup]="exchangeformGroup"></form>
+<form [formGroup]="exchangeformGroup">
+  <p>Escolha um valor ou digite abaixo</p>
+  <app-preset-values (changeValue)="applyValue($event)"></app-preset-values>
+  <mat-form-field appearance="outline">
+    <mat-label>Valor em reais (BRL)</mat-label>
+    <input
+      matInput
+      formControlName="brl"
+      placeholder="R$ 5.500,00"
+      currencyMask
+      [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', precision: 2 }"
+    />
+    <img
+      matSuffix
+      class="form-input__flag"
+      src="assets/images/flag-brazil.png"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Valor em dólares (USD)</mat-label>
+    <input
+      matInput
+      formControlName="usd"
+      placeholder="$ 1.000,00"
+      currencyMask
+      [options]="{ prefix: '$ ', thousands: ',', precision: 2 }"
+    />
+    <img matSuffix class="form-input__flag" src="assets/images/flag-usa.png" />
+  </mat-form-field>
+  <button
+    mat-button
+    type="button"
+    class="cta-btn"
+    (click)="startOrderHandle()"
+    [disabled]="exchangeformGroup.invalid"
+  >
+    Iniciar compra
+  </button>
+</form>

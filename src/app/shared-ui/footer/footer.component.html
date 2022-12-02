@@ -1,6 +1,6 @@
 <section *ngIf="showMetrics">
   <app-metric
-    *ngFor="let metric; as: metrics"
+    *ngFor="let metric of metrics"
     [value]="metric.value"
     [description]="metric.description"
   ></app-metric>

@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
 
-export interface ExchangeService {
-  retrieveDollarValue: (date: Date) => Observable<number>;
+export abstract class ExchangeService {
+  public abstract retrieveDollarValue(date: Date): Observable<number>;
 }
