@@ -79,7 +79,8 @@ h2 {
 
 @include tablet() {
   :host {
-    flex: 1 0 45%;
+    max-width: 450px;
+    margin: 0 auto;
   }
 }
 
