@@ -44,3 +44,9 @@ form {
     margin-top: calc(100vh - 500px);
   }
 }
+
+@include x-desktop() {
+  :host {
+    margin-top: calc(50vh - 310px);
+  }
+}

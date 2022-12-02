@@ -56,3 +56,9 @@ p {
     z-index: 3;
   }
 }
+
+@include x-desktop() {
+  main {
+    height: 450px;
+  }
+}
