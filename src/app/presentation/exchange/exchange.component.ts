@@ -63,17 +63,17 @@ export class ExchangeComponent implements OnInit, OnDestroy {
   };
 
   public order: OrderPayload = {
-    id: 120,
-    createAt: '02/12/1982',
+    id: 0,
+    createAt: '',
     address: '',
     addressNumber: '',
     city: '',
     district: '',
-    kmDistance: 100,
-    name: 'Seu nome',
+    kmDistance: 0,
+    name: '',
     postalCode: '',
     state: '',
-    usd: 120,
+    usd: 0,
     extra: ''
   };
 
@@ -107,8 +107,6 @@ export class ExchangeComponent implements OnInit, OnDestroy {
           selected: this.exchangeSelected
         };
       });
-
-    this.step = 3;
   }
 
   ngOnDestroy(): void {

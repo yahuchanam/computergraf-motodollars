@@ -86,28 +86,22 @@ h2 {
 
 @include desktop() {
   :host {
-    flex: 1 1 100%;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    @include row(nowrap);
     align-items: flex-end;
-    margin-bottom: 20px;
-    margin-top: 20px;
+  }
+
+  .order {
+    min-width: 337px;
   }
 
   .moto {
-    display: flex;
     width: 454px;
-    margin-left: -160px;
-    position: relative;
-  }
-
-  form {
-    width: 340px;
-  }
-
-  section {
-    position: relative;
-    align-self: flex-start;
+    margin: unset;
+    position: fixed;
+    bottom: 80px;
+    left: unset;
+    right: 10px;
+    rotate: -24deg;
   }
 }
 
@@ -117,13 +111,8 @@ h2 {
     gap: 2rem;
   }
 
-  form {
-    width: 400px;
-  }
-
   .moto {
-    margin-left: 0px;
-    align-self: flex-start;
-    top: calc(100vh - 460px);
+    bottom: 110px;
+    right: 90px;
   }
 }
