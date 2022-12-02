@@ -24,3 +24,20 @@ a.mdc-button {
 p {
   width: 100%;
 }
+
+@include tablet() {
+  :host {
+    min-height: 100vh;
+
+    a.mdc-button {
+      flex: 1 0 0;
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  }
+
+  main {
+    @include row();
+    flex: 1 1 100%;
+  }
+}

@@ -47,3 +47,24 @@ fa-icon {
     transform: translateY(-15px);
   }
 }
+
+@include tablet() {
+  @include tablet() {
+    :host {
+      flex: 1 0 45%;
+      margin: 4rem 0;
+    }
+  }
+
+  fa-icon {
+    display: none;
+  }
+
+  h1 {
+    order: 1;
+  }
+
+  img {
+    order: 2;
+  }
+}

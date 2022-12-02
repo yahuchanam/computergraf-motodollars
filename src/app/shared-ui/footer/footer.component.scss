@@ -16,3 +16,9 @@ section {
   justify-content: space-between;
   width: 100%;
 }
+
+@include tablet() {
+  :host {
+    @include row(nowrap);
+  }
+}
