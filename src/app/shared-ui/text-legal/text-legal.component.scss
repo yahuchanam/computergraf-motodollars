@@ -9,3 +9,15 @@ p {
   font-size: 11px;
   text-align: center;
 }
+
+@include desktop() {
+  :host {
+    position: relative;
+    top: 29px;
+    margin-left: auto;
+  }
+
+  p {
+    text-align: right;
+  }
+}

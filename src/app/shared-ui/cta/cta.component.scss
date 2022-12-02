@@ -68,3 +68,26 @@ fa-icon {
     order: 2;
   }
 }
+
+@include desktop() {
+  :host {
+    flex: 1 0 300px;
+    position: unset;
+  }
+
+  h1 {
+    font-size: 43px;
+    width: 469px;
+    position: absolute;
+    line-height: 58px;
+    top: 60px;
+    left: calc(50vw - 200px);
+  }
+
+  img {
+    position: absolute;
+    bottom: 20px;
+    height: 302px;
+    left: calc(50vw - 417px);
+  }
+}

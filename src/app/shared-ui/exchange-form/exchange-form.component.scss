@@ -37,3 +37,10 @@ form {
     flex: 1 0 45%;
   }
 }
+
+@include desktop() {
+  :host {
+    flex: 1 0 auto;
+    margin-top: calc(100vh - 500px);
+  }
+}

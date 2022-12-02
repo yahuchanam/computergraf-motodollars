@@ -41,3 +41,18 @@ p {
     flex: 1 1 100%;
   }
 }
+
+@include desktop() {
+  :host {
+    a.mdc-button {
+      max-height: 54px;
+      margin-top: 20px;
+    }
+  }
+
+  main {
+    align-items: flex-start;
+    margin-bottom: -7rem;
+    z-index: 3;
+  }
+}

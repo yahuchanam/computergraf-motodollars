@@ -21,3 +21,19 @@ img {
     flex: 1 1 100%;
   }
 }
+
+@include desktop() {
+  :host {
+    flex: 1 0 240px;
+  }
+
+  img {
+    width: 267px;
+    margin-bottom: 0rem;
+  }
+
+  p {
+    display: flex;
+    color: $color-primary;
+  }
+}
