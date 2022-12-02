@@ -6,4 +6,6 @@
   ></app-metric>
 </section>
 
-<app-text-legal></app-text-legal>
+<app-text-legal
+  [ngClass]="{ 'full-legal': metrics.length === 0 }"
+></app-text-legal>

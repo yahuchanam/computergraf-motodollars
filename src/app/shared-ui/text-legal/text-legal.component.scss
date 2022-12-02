@@ -19,5 +19,12 @@ p {
 
   p {
     text-align: right;
+    margin-right: 1rem;
+  }
+}
+
+@include x-desktop() {
+  :host {
+    top: 0;
   }
 }

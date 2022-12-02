@@ -80,6 +80,10 @@ p {
   font-size: 8px;
 }
 
+.moto {
+  display: none;
+}
+
 @include tablet() {
   :host {
     flex: 1 0 45%;
@@ -88,13 +92,43 @@ p {
 
 @include desktop() {
   :host {
-    flex: 1 0 auto;
-    margin-top: calc(100vh - 500px);
+    flex: 1 1 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .moto {
+    display: flex;
+    width: 454px;
+    margin-left: -160px;
+    position: relative;
+  }
+
+  form {
+    width: 340px;
+  }
+
+  section {
+    position: relative;
+    align-self: flex-start;
+    top: 2rem;
   }
 }
 
 @include x-desktop() {
   :host {
-    margin-top: calc(50vh - 310px);
+    margin-top: 0;
+    gap: 2rem;
+  }
+
+  form {
+    width: 400px;
+  }
+
+  .moto {
+    margin-left: 0px;
   }
 }
