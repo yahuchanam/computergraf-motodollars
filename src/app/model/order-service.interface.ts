@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
-import { Order } from './order.interface';
+import { OrderPayload } from './order-payload.interface';
 
 export abstract class OrderService {
-  abstract retrieveOrders: () => Observable<Order[]>;
+  abstract retrieveOrders: () => Observable<OrderPayload[]>;
   abstract calculateShipping: (km: number) => number;
 }

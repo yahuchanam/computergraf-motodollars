@@ -1,0 +1,43 @@
+@import '/src/global-styles/common';
+
+:host {
+  @include row();
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+app-logo::ng-deep {
+  margin: 0;
+  order: 1;
+
+  img {
+    width: 117px;
+  }
+
+  @include tablet() {
+    flex: initial;
+  }
+}
+
+a.mdc-button::ng-deep {
+  order: 2;
+  height: 74px;
+  color: $color-primary;
+
+  .mdc-button__label {
+    @include column();
+    gap: 0.5rem;
+  }
+  img {
+    width: 86px;
+  }
+}
+
+h1 {
+  order: 3;
+  flex: 1 1 100%;
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+}

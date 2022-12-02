@@ -1,0 +1,25 @@
+@import '/src/global-styles/common';
+
+:host {
+  @include column();
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.mat-mdc-header-cell {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  max-width: 750px;
+  margin: 0 auto auto;
+}
+
+app-footer::ng-deep {
+  padding: 2rem 1rem;
+
+  section {
+    display: none;
+  }
+}

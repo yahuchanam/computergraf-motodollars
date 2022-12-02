@@ -13,6 +13,13 @@ const routes: Routes = [
       import('./presentation/exchange/exchange.component').then(
         (m) => m.ExchangeComponent
       )
+  },
+  {
+    path: 'admin',
+    loadComponent: () =>
+      import('./presentation/admin/admin.component').then(
+        (m) => m.AdminComponent
+      )
   }
 ];
 

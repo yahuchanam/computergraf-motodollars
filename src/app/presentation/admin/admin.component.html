@@ -1,0 +1,27 @@
+<app-admin-header></app-admin-header>
+<section *ngIf="orderDataSource$ | async as orderDataSource">
+  <table mat-table [dataSource]="orderDataSource">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let order">{{ order.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="postalCode">
+      <th mat-header-cell *matHeaderCellDef>CEP</th>
+      <td mat-cell *matCellDef="let order">{{ order.postalCode }}</td>
+    </ng-container>
+    <ng-container matColumnDef="usd">
+      <th mat-header-cell *matHeaderCellDef>Qtd. Dólares</th>
+      <td mat-cell *matCellDef="let order">
+        {{ order.usd | currency : 'USD' }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="kmDistance">
+      <th mat-header-cell *matHeaderCellDef>Distância KM</th>
+      <td mat-cell *matCellDef="let order">{{ order.kmDistance }}km</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="orderColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: orderColumns"></tr>
+  </table>
+</section>
+<app-footer></app-footer>
